@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.nav {
+  margin: 0 5px; }
+  .nav h4 {
+    font-size: 25px;
+    font-weight: normal; }
+
+.header {
+  margin: 5px 25px;
+  display: flex; }
+  .header .left img {
+    width: 95px;
+    height: 130px; }
+  .header .right {
+    margin: 0 15px; }
+  .header h3 {
+    font-size: 15px; }
+
+.btn {
+  text-align: center; }
+
+.review .review-nav {
+  display: flex; }
+  .review .review-nav h3 {
+    font-size: 15px; }
+
+.book {
+  margin: 0 15px;
+  display: flex; }
+  .book .book-left {
+    margin: 5px 0; }
+  .book .book-right {
+    margin: 0 5px; }
+    .book .book-right h4 {
+      font-size: 15px; }

@@ -1,0 +1,52 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.nav{
+	margin: 0 5px;
+	h4{
+		font-size: 25px;
+		font-weight: normal;
+	}
+}
+.header{
+	margin: 5px 25px;
+	display: flex;
+	.left{
+		img{
+			width:95px;
+			height: 130px;
+		}
+	}
+	.right{
+		margin: 0 15px;
+	}
+	h3{
+		font-size: 15px;
+	}
+}
+.btn{
+	text-align: center;
+}
+.review{
+	.review-nav{
+		display: flex;
+		h3{
+			font-size: 15px;
+		}
+	}
+}
+.book{
+	margin: 0 15px;
+	display: flex;
+	.book-left{
+		margin: 5px 0;
+	}
+	.book-right{
+		margin: 0 5px;
+		h4{
+			font-size: 15px;
+		}
+	}
+}
