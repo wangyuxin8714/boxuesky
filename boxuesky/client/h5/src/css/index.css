@@ -41,15 +41,17 @@
   .yw-data .all {
     border: 1px solid greenyellow; }
 
-.nav {
-  margin: 0 15px; }
-  .nav .nav-img {
-    display: flex; }
-    .nav .nav-img .right {
-      margin: 15px 10px; }
-    .nav .nav-img img {
-      width: 75px;
-      height: 100px; }
-    .nav .nav-img h3 {
-      font-size: 15px;
-      font-weight: normal; }
+.nav .nav-img {
+  padding: 10px 15px;
+  display: flex;
+  border-bottom: 1px solid #ccc; }
+  .nav .nav-img .right {
+    margin: 15px 10px; }
+    .nav .nav-img .right p {
+      margin-bottom: 0; }
+  .nav .nav-img img {
+    width: 75px;
+    height: 100px; }
+  .nav .nav-img h3 {
+    font-size: 15px;
+    font-weight: normal; }

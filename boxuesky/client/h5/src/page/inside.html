@@ -4,56 +4,70 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
-		<script src="../js/mui.min.js"></script>
+		<!-- <script src="../js/mui.min.js"></script> -->
 		<link href="../css/mui.min.css" rel="stylesheet" />
-		<link rel="stylesheet" type="text/css" href="../css/inside.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/inside.css" />
 	</head>
 	<body>
 		<div class="wrapper">
-			<div class="nav">
-				<h4><</h4>
-			</div>
-			<div class="header">
-				<div class="left">
-					<img src="../images/13.jpg" >
+
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">图书详情</h1>
+			</header>
+			<div class="mui-content">
+				<div class="header">
+					<div class="left">
+						<img src="../images/13.jpg">
+					</div>
+					<div class="right">
+						<h3>黄金瞳</h3>
+						<p>打通<span>白金</span></p>
+						<p>都市/都市生活</p>
+						<p>416.1万字|完本</p>
+					</div>
 				</div>
-				<div class="right">
-					<h3>黄金瞳</h3>
-					<p>打通<span>白金</span></p>
-					<p>都市/都市生活</p>
-					<p>416.1万字|完本</p>
+				<div class="btn">
+					<button type="button">免费阅读</button>
+					<button type="button">加入书架</button>
+					<button type="button">VIP订阅</button>
 				</div>
-			</div>
-			<div class="btn">
-				<button type="button">免费阅读</button>
-				<button type="button">加入书架</button>
-				<button type="button">VIP订阅</button>
-			</div>
-			<div class="rote">
-				<p>　　     电视剧《黄金瞳》由张艺兴领衔主演，于2019年2月26日震撼开播！</p>
-				<p>　　典当行工作的小职员庄睿，在一次意外中眼睛发生异变。</p>
-				<p>　　美轮美奂的陶瓷，古拙大方的青铜器，惊心动魄的赌石接踵而来，他的生活也随之产生了天翻地覆的变化。</p>
-			</div>
-			<div class="review">
-				<div class="review-nav">
-					<h3>书评区</h3>
-					<p>1209条评论</p>
+				<div class="rote">
+					<p>　　 电视剧《黄金瞳》由张艺兴领衔主演，于2019年2月26日震撼开播！</p>
+					<p>　　典当行工作的小职员庄睿，在一次意外中眼睛发生异变。</p>
+					<p>　　美轮美奂的陶瓷，古拙大方的青铜器，惊心动魄的赌石接踵而来，他的生活也随之产生了天翻地覆的变化。</p>
 				</div>
-			</div>
-			<div class="book">
-				<div class="book-left">
-					<img src="../images/21.jpg" >
+				<div class="review">
+					<div class="review-nav">
+						<h3>书评区</h3>
+						<p>1209条评论</p>
+					</div>
 				</div>
-				<div class="book-right">
-					<h4>坠落与黑暗</h4>
-					<p>这是我初中第一次全部看完的纸质小说，故事情节还是很丰富的！</p>
-					<p>3个小时前</p>
+				<div class="login">
+					<input type="text" value="" placeholder="请输入评论"/>
+					<button type="button" class="btn">评论</button>
 				</div>
+				<div class="book">
+					<dl>
+						<dt class="book-left">
+							<img src="../images/21.jpg">
+						</dt>
+						<dd class="book-right">
+							<h4>坠落与黑暗</h4>
+							<p>这是我初中第一次全部看完的纸质小说，故事情节还是很丰富的！</p>
+							<p>3个小时前</p>
+						</dd>
+					</dl>
+				</div>
+				
+				
 			</div>
-			<div class="login">
-				<input type="text" value="" />
-				<button type="button">请输入评论内容</button>
-			</div>
+
 		</div>
+
+
+
+		<script src="../js/libs/require.js" async defer data-mian="../js/index.js"></script>
+
 	</body>
 </html>

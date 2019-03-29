@@ -3,15 +3,25 @@
   padding: 0;
   list-style: none; }
 
+html, body {
+  background: #fff; }
+
+.wrapper {
+  background: #fff; }
+
 .nav {
   margin: 0 5px; }
   .nav h4 {
     font-size: 25px;
     font-weight: normal; }
 
+.mui-content {
+  background: #fff; }
+
 .header {
-  margin: 5px 25px;
-  display: flex; }
+  padding: 20px 25px 10px 25px;
+  display: flex;
+  background: #fff; }
   .header .left img {
     width: 95px;
     height: 130px; }
@@ -21,19 +31,39 @@
     font-size: 15px; }
 
 .btn {
-  text-align: center; }
+  text-align: center;
+  background: #fff; }
 
-.review .review-nav {
-  display: flex; }
-  .review .review-nav h3 {
-    font-size: 15px; }
+.review {
+  padding: 0 15px;
+  background: #fff; }
+  .review .review-nav {
+    display: flex; }
+    .review .review-nav h3 {
+      font-size: 15px; }
+
+.rote {
+  background: #fff;
+  padding: 0 15px; }
 
 .book {
-  margin: 0 15px;
+  background: #fff; }
+  .book dl {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0 15px;
+    border-bottom: 1px solid #ccc; }
+    .book dl .book-left {
+      margin: 5px 0; }
+    .book dl .book-right {
+      margin: 0 5px; }
+      .book dl .book-right h4 {
+        font-size: 15px; }
+
+.login {
+  padding: 0 15px;
   display: flex; }
-  .book .book-left {
-    margin: 5px 0; }
-  .book .book-right {
-    margin: 0 5px; }
-    .book .book-right h4 {
-      font-size: 15px; }
+  .login .btn {
+    height: 40px;
+    background: #ddd; }

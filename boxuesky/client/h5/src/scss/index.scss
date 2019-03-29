@@ -52,11 +52,16 @@
 }
 
 .nav{
-	margin: 0 15px;
+	
 	.nav-img{
+		padding: 10px 15px;
 		display: flex;
+		border-bottom: 1px solid #ccc;
 		.right{
 			margin: 15px 10px;
+			p{
+				margin-bottom: 0;
+			}
 		}
 		img{
 			width: 75px;

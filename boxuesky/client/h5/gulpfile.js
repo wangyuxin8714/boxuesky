@@ -24,7 +24,7 @@ gulp.task("sass",function(){
 gulp.task("webserver",function(){
 	gulp.src("./src")
 	.pipe(webserver({
-		open:true,
+		// open:true,
 		port:8089,
 		livereload:true,
 		proxies:[
@@ -35,7 +35,7 @@ gulp.task("webserver",function(){
 })
 
 gulp.task("watch",function(){
-	return gulp.watch("./src/scss/*.scss",gulp.series("sass"))
+	 gulp.watch("./src/scss/*.scss",gulp.series("sass"))
 })
 
-gulp.task("dev",gulp.series("sass","webserver","watch"))
+gulp.task("dev",gulp.parallel("sass","webserver","watch"))
