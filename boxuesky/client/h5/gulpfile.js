@@ -24,12 +24,12 @@ gulp.task("sass",function(){
 gulp.task("webserver",function(){
 	gulp.src("./src")
 	.pipe(webserver({
-		// open:true,
+		//open:true,
 		port:8089,
 		livereload:true,
 		proxies:[
-			{source:"/api/getBill",target:"http://localhost:3000/api/getBill"},
-			{source:"/api/getLogin",target:"http://localhost:3000/api/getLogin"}
+			{source:"/api/findFiction",target:"http://localhost:3000/api/findFiction"},
+			{source:"/api/findPart",target:"http://localhost:3000/api/findPart"},
 		]
 	}))
 })
