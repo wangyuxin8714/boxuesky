@@ -1,0 +1,46 @@
+
+http://192.168.137.162:3000
+
+//用户登录
+方式：post
+端口：'/api/findUser'
+参数：用户名user，密码pwd 
+
+
+//查询全部小说
+方式：post
+端口：'/api/findFiction'
+
+
+//分类查询  连载  完本
+方式：post
+端口：'/api/findPart'
+参数：类型值：updateType    连载 0   完本 1
+
+
+
+//添加书架
+方式：post
+端口：'/api/insertBookrack'
+参数：用户id :uid
+          书名：bookName
+          作者：authorName
+          图片地址：coverUrl
+	
+
+
+//个人书架查询
+方式：post
+端口：'/api/findBookrack'
+参数：用户id：uid
+
+
+//删除个人书架里的书
+方式：post
+端口：'/api/findBookrack'
+参数：图书id：id
+
+
+
+
+
