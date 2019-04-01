@@ -1,0 +1,56 @@
+﻿
+http://192.168.137.162:3000
+
+//用户登录
+方式：post
+端口：'/api/findUser'
+参数：用户名user，密码pwd 
+
+
+//查询全部小说
+方式：post
+端口：'/api/findFiction'
+
+
+//分类查询  连载  完本
+方式：post
+端口：'/api/findPart'
+参数：类型值：updateType    连载 0   完本 1
+
+
+
+//添加书架
+方式：post
+端口：'/api/insertBookrack'
+参数：用户id :uid
+          书名：bookName
+          作者：authorName
+          图片地址：coverUrl
+	
+
+
+//个人书架查询
+
+router.post('/api/findBookrack',function(req, res, next) {
+	mongo.find(book,bookrack,{"uid":req.body.uid},function(result){
+		if(result.length===0){
+			res.send({code:0,msg:"找不到"})
+		}else{
+			res.send({code:1,data:result})
+		}
+	})
+});
+
+//删除个人书架里的书
+router.post('/api/deleteBookrack',function(req, res, next) {
+	mongo.remove(book,bookrack,{"_id":req.body.id},function(result){
+		if(result.deletedCount===0){
+			res.send({code:0,msg:"删除失败"})
+		}else{
+			res.send({code:1,msg:"删除成功"})
+		}
+	})
+});
+
+
+
