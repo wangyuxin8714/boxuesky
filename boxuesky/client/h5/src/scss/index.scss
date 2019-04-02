@@ -9,13 +9,14 @@
 }
 .header{
 	width:100%;
-	height: 55px;
-	line-height: 55px;
+	height: 44px;
+	line-height: 44px;
 	border-bottom: 1px solid #ccc;
 	display: flex;
 	justify-content: space-around;
+	
 	h3{
-		margin: 15px 0;
+		margin: 10px 0;
 		color: inherit;
 		font-weight: normal;
 		font-size: 21px;
@@ -25,7 +26,7 @@
 		color: black;
 	}
 	.btn{
-		margin: 10px 0;
+		margin: 5px 0;
 		//border: 1px solid #3f7fe0;
 	}
 }
@@ -38,14 +39,15 @@
 		height: 100%;
 		img{
 			width:100%;
-			height: 280px;
+			height: 210px;
+			margin-top: 44px;
 		}
 	}
 }
 
 .yw-data{
 	text-align: center;
-	margin: 15px 0;
+	margin: 5px 0;
 	.all{
 		border: 1px solid greenyellow;
 	}
@@ -61,11 +63,20 @@
 			margin: 15px 10px;
 			p{
 				margin-bottom: 0;
+				font-size: 12px;
+			}
+			p:last-child{
+			    margin-bottom: 0;
+			    height: 35px;
+			    font-size: 9px;
+			    margin-top: 0px;
+			    overflow: hidden;
 			}
 		}
 		img{
 			width: 75px;
-			height: 100px
+			height: 100px; 
+			margin-top: 18px;
 		}
 		h3{
 			font-size: 15px;
@@ -74,12 +85,13 @@
 	}
 }
 #pullrefresh{
-	margin-top: 400px;
+	margin-top: 300px;
 	width:100%;
-	height: 100%;
+	height: 368px;
 }
 
 .active{
 	background:palevioletred;
 	color:#fff;
 }
+

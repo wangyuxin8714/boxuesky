@@ -7,29 +7,19 @@ gulp.task("sass",function(){
  	.pipe(sass())
  	.pipe(gulp.dest("./src/css"))
  })
-// 错误
-// gulp.task("webserver",function(){
-// 	glup.src("./src")
-// 	.pipe(webserver({
-// 		open:true,
-// 		port:8089,
-// 		livereload:true,
-// 		proxies:[
-// 			{source:"/api/getBill",target:"http://localhost:3000/api/getBill"},
-// 			{source:"/api/getLogin",target:"http://localhost:3000/api/getLogin"}
-// 		]
-// 	}))
-// })
 
 gulp.task("webserver",function(){
 	gulp.src("./src")
 	.pipe(webserver({
-		//open:true,
+		// open:true,
 		port:8089,
 		livereload:true,
 		proxies:[
 			{source:"/api/findFiction",target:"http://localhost:3000/api/findFiction"},
 			{source:"/api/findPart",target:"http://localhost:3000/api/findPart"},
+			{source:"/api/findUser",target:"http://localhost:3000/api/findUser"},
+			{source:"/api/finddetails",target:"http://localhost:3000/api/finddetails"},
+			{ source: "/api/findBookrack",target:"http://localhost:3000/api/findBookrack"}
 		]
 	}))
 })

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongo = require("mongodb-curd");
 
-var book = "1612b";
+var book = "book";
 var userBase = "userBase";
 var fict = "fict";
 var bookrack = "bookrack";
@@ -14,15 +14,15 @@ router.post('/api/findUser', function(req, res, next) {
         if (result.length === 0) {
             res.send({ code: 0, msg: "登录失败" })
         } else {
-            res.send({ code: 1, msg: "登陆成功" })
+            res.send({ code: 1, msg: "登陆成功",uid:result[0]._id })
         }
     })
 });
 
 //小说查询
 router.post('/api/findFiction', function(req, res, next) {
-    let page = req.body.page;
-    let pageSize = req.body.pageSize;
+    var  page = req.body.page;
+    var  pageSize = req.body.pageSize;
     mongo.find(book, fict, function(result) {
         if (result.length === 0) {
             res.send({ code: 0, msg: "找不到" })
@@ -30,19 +30,37 @@ router.post('/api/findFiction', function(req, res, next) {
             res.send({ code: 1, data: result })
         }
     }, {
-        skip: page,
+        skip: (page-1)*pageSize,
         limit: pageSize
     })
 });
 
-//分类查询  连载  完本
-router.post('/api/findPart', function(req, res, next) {
-    mongo.find(book, fict, { "updateType": req.body.updateType }, function(result) {
+//小说详情
+router.post('/api/finddetails', function(req, res, next) {
+    mongo.find(book, fict,{"_id":req.body.xid}, function(result) {
         if (result.length === 0) {
             res.send({ code: 0, msg: "找不到" })
         } else {
             res.send({ code: 1, data: result })
         }
+    })
+});
+
+//分类查询  连载  完本
+router.post('/api/findPart', function(req, res, next) {
+	var  page = req.body.page;
+	console.log(page)
+
+	var  pageSize = req.body.pageSize;
+    mongo.find(book, fict, { "updateType": req.body.text }, function(result) {
+        if (result.length === 0) {
+            res.send({ code: 0, msg: "找不到" })
+        } else {
+            res.send({ code: 1, data: result })
+        }
+    }, {
+        skip: (page-1)*pageSize,
+        limit: pageSize
     })
 });
 
