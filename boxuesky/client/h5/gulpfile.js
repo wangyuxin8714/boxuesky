@@ -43,12 +43,9 @@ gulp.task("webserver",function(){
 		proxies:[
 			{source:"/api/findFiction",target:"http://localhost:3000/api/findFiction"},
 			{source:"/api/findPart",target:"http://localhost:3000/api/findPart"},
-<<<<<<< HEAD
 			{source:"/api/findUser",target:"http://localhost:3000/api/findUser"},
 			{source:"/api/finddetails",target:"http://localhost:3000/api/finddetails"},
-=======
->>>>>>> 4518eb4e3992b9b2c4755c9f0ebae4ff9343dc41
-			{ source: "/api/findBookrack",target:"http://localhost:3000/api/findBookrack"}
+			{source: "/api/findBookrack",target:"http://localhost:3000/api/findBookrack"}
 		]
 	}))
 })
