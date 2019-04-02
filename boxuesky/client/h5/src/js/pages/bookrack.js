@@ -10,6 +10,8 @@ require(["../js/config.js"],function () {
                 success: opts.success
             });
         } 
+
+        //=> 初始化的方法代码的入口
         function init () {
             let promise = new Promise((resolve,reject) => {
                 ajax({
@@ -20,25 +22,26 @@ require(["../js/config.js"],function () {
                 })
             })
             promise.then((result) => {
-                
                 render(result)
             }).then(() => {
                 bindEvent()
             })
         }
 
+        //=> 页面事件的集合
         let bindEvent = () => {
             mui('.book-list').on('tap','.delete',function () {
                 var _this = this;
-                
                 mui.alert("您确定要删除吗?",function (e) {
-                    console.log(22)
                     _this.parentNode.parentNode.remove(this.parentNode)
                     ajax("/api/deleteBookrack",{
                         data: {
                             id: _this.getAttribute("data-id")
                         },
                         success: function (data) {
+                            mui.alert('删除成功',function (){
+                                console.log(22)
+                            })
                             console.log(data)
                         }
                     })
