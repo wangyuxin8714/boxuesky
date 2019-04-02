@@ -79,6 +79,7 @@ router.post('/api/insertBookrack', function(req, res, next) {
 
 //个人书架查询
 router.post('/api/findBookrack', function(req, res, next) {
+    console.log(req.body)
     mongo.find(book, bookrack, { "uid": req.body.uid }, function(result) {
         if (result.length === 0) {
             res.send({ code: 0, msg: "找不到" })
@@ -90,6 +91,7 @@ router.post('/api/findBookrack', function(req, res, next) {
 
 //删除个人书架里的书
 router.post('/api/deleteBookrack', function(req, res, next) {
+    console.log(req.body)
     mongo.remove(book, bookrack, { "_id": req.body.id }, function(result) {
         if (result.deletedCount === 0) {
             res.send({ code: 0, msg: "删除失败" })

@@ -1,11 +1,16 @@
 require.config({
+	baseUrl : "../js",
 	paths:{
+<<<<<<< HEAD
 		"mui":"./libs/mui.min"
+=======
+		"mui":"libs/mui.min"
+>>>>>>> 4518eb4e3992b9b2c4755c9f0ebae4ff9343dc41
 	}
 })
 
-
 require(["mui"],function(mui){
+<<<<<<< HEAD
 	var xid=localStorage.getItem("xid");
 	var head=document.querySelector("#head")
 	
@@ -48,10 +53,16 @@ require(["mui"],function(mui){
 			}
 		})
 	}
+=======
+>>>>>>> 4518eb4e3992b9b2c4755c9f0ebae4ff9343dc41
 	let bindEvent = function () {
 		mui(".main").on('tap','#bookrack',function () {
 			window.location.href = "../page/bookrack.html"
 		})
 	}
+<<<<<<< HEAD
 	
+=======
+	bindEvent()
+>>>>>>> 4518eb4e3992b9b2c4755c9f0ebae4ff9343dc41
 })
