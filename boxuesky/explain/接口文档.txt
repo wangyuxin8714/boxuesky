@@ -1,6 +1,9 @@
 ﻿
 http://192.168.137.162:3000
 
+// 用户个人ID 保存在本地,作用于页面之间跳转
+//  本地保存的 键名为  uid 存储
+
 //用户登录
 方式：post
 端口：'/api/findUser'
@@ -30,7 +33,6 @@ http://192.168.137.162:3000
 
 
 //个人书架查询
-
 router.post('/api/findBookrack',function(req, res, next) {
 	mongo.find(book,bookrack,{"uid":req.body.uid},function(result){
 		if(result.length===0){

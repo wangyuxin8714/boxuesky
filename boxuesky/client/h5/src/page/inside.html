@@ -9,13 +9,15 @@
 		<link rel="stylesheet" type="text/css" href="../css/inside.css" />
 	</head>
 	<body>
+	<!-- 
+		#bookrack   跳转个人书架的id名
+	 -->
 		<div class="wrapper">
-
 			<header class="mui-bar mui-bar-nav">
 				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 				<h1 class="mui-title">图书详情</h1>
 			</header>
-			<div class="mui-content">
+			<div class="mui-content main">
 				<div class="header">
 					<div class="left">
 						<img src="../images/13.jpg">
@@ -29,7 +31,7 @@
 				</div>
 				<div class="btn">
 					<button type="button">免费阅读</button>
-					<button type="button">加入书架</button>
+					<button type="button" id="bookrack">加入书架</button>
 					<button type="button">VIP订阅</button>
 				</div>
 				<div class="rote">
@@ -64,10 +66,6 @@
 			</div>
 
 		</div>
-
-
-
-		<script src="../js/libs/require.js" async defer data-mian="../js/index.js"></script>
-
+		<script src="../js/libs/require.js" defer async="true" data-main="../js/inside.js"></script>
 	</body>
 </html>
