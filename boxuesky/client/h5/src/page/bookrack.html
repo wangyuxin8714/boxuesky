@@ -4,49 +4,61 @@
     <meta charset="UFT-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Erynia/staticFile/master/favicon.ico" />
-    <title>Commitment</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Erynia/staticFile/dev/favicon.ico" />
+    <title>博学网</title>
     <link rel="stylesheet" href="../css/reset.min.css">
     <link rel="stylesheet" href="../css/mui.min.css">
     <link rel="stylesheet" href="../css/bookrack.min.css">
 </head>
 <body>
-    <div class="wrapper">
-        <header class="header">
-            <span class="mui-icon mui-icon-back"></span>
-            <ul class="tab">
-                <li class="active"><a href="javascript:;">我的书架</a></li>
-                <li><a href="javascript:;">最近阅读</a></li>
-            </ul>
-            <strong>
-                <span class="mui-icon mui-icon-search"></span>
-                <span class="mui-icon mui-icon-bars"></span>
-            </strong>
-        </header>
-        <main class="main">
-            <ul id="OA_task_1" class="mui-table-view book-list">
-                <li class="mui-table-view-cell">
-                    <div class="mui-slider-right mui-disabled">
-                        <a class="mui-btn mui-btn-red delete">删除</a>
-                    </div>
-                    <div class="mui-slider-handle">
-                        <dl>
-                            <dt><img src="../images/11.jpg" alt=""></dt>
-                            <dd>
-                                <h6 class="book-name" title="书名">书名是地方撒打发斯蒂芬啥的方法</h6>
-                                <strong class="author"><span class="mui-icon mui-icon-person"></span><em>作者名字</em></strong>
-                                <p>"豪门总裁","婚姻","暧昧"</p>
-                            </dd>
-                        </dl>
-                    </div>
-                </li>
-            </ul>
-        
-        </main>
-        <footer class="footer">
-            
-        </footer>
-    </div>
-    <script src="../js/libs/require.js" defer async="true" data-main="../js/pages/bookrack.js"></script>
+    <!-- 主界面菜单同时移动 -->
+    	<!-- 侧滑导航根容器 -->
+    	<div class="mui-off-canvas-wrap mui-draggable">
+    		<!-- 主页面容器 -->
+    		<div class="mui-inner-wrap">
+    			<!-- 主页面标题 -->
+    			<header class="mui-bar mui-bar-nav">
+    				<h1 class="mui-title">我的书架</h1>
+    			</header>
+    			<nav class="mui-bar mui-bar-tab navtab">
+    				<a class="mui-tab-item">
+    					<span class="mui-tab-label">书库</span>
+    				</a>
+    				<a class="mui-tab-item">
+    					<span class="mui-tab-label act">书架</span>
+    				</a>
+    			</nav>
+    			<!-- 主页面内容容器 -->
+    			<div class="mui-content mui-scroll-wrapper">
+    				<div class="mui-scroll">
+    					<!-- 主界面具体展示内容 -->
+    					<ul id="OA_task_1" class="mui-table-view book-list">
+    					    <!-- <li class="mui-table-view-cell lis">
+    							<h3><img src="../images/11.jpg"></h3>
+    							<p>阿里山都快过年啦</p>
+    					    </li>
+    						<li class="mui-table-view-cell lis">
+    							<h3><img src="../images/11.jpg"></h3>
+    							<p>阿里山都快过年啦</p>
+    						</li>
+    						<li class="mui-table-view-cell lis">
+    							<h3><img src="../images/11.jpg"></h3>
+    							<p>阿里山都快过年啦</p>
+    						</li>
+    						<li class="mui-table-view-cell lis">
+    							<h3><img src="../images/11.jpg"></h3>
+    							<p>阿里山都快过年啦</p>
+    						</li>
+    						<li class="mui-table-view-cell lis">
+    							<h3><img src="../images/11.jpg"></h3>
+    							<p>阿里山都快过年啦</p>
+    						</li> -->
+    					</ul>
+    				</div>
+    			</div>
+    	   	 <div class="mui-off-canvas-backdrop"></div>
+    		</div>
+    	</div>
+    <script src="../js/libs/require.js" defer async="true" data-main="../js/bookrack.js"></script>
 </body>
 </html>

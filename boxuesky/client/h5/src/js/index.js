@@ -1,26 +1,36 @@
 require.config({
 	paths: {
-		"mui": "./libs/mui.min"
+		"mui": "./libs/mui.min",
+		"swiper":"./libs/swiper.min"
 	}
 })
 
 
-require(["mui"], function(mui) {
+require(["mui","swiper"], function(mui,Swiper) {
 	
-	
+	var swiper=new Swiper("#swiper",{
+		autoplay:{
+			delay:1000
+		},
+		loop:true,
+		pagination: {
+			el: '.swiper-pagination',
+			clickable:true
+		},
+	})
 	
 	let uid=localStorage.getItem("id");
 	let nav = document.querySelector('.nav');
 	let scro = document.querySelector('.scro');
+
 	
 	var page = 1;
-	var pages = 1;
-	let pageSize = 5;
+	let pageSize = 10;
 	var bton=[...document.querySelectorAll(".yw-data button")]
 	
 	var txt=[...document.querySelectorAll(".yw-data button")][0].getAttribute("data-main")
 	function init() {
-		render(txt)
+		render(txt,page++)
 	}
 	
 	//是否登录
@@ -46,18 +56,20 @@ require(["mui"], function(mui) {
 		this.classList.add("active")
 		nav.innerHTML ='';
 		txt=this.getAttribute("data-main");
-		pages=1
-		render(txt,pages++)
+
+		page=1
+		render(txt,page++)
 	})
 	
 	
 
 	//渲染页面
-	function render(tet,pages) {
+	function render(tet,page) {
 		if(tet==="2"){
+			console.log(page)
 			mui.ajax('/api/findFiction', {
 				data: {
-					page: page++,
+					page: page,
 					pageSize: pageSize
 				},
 				dataType: 'json', //服务器返回json格式数据
@@ -71,7 +83,7 @@ require(["mui"], function(mui) {
 		}else if(tet==="0"){
 				mui.ajax('/api/findPart', {
 				data: {
-					page: pages,
+					page: page,
 					pageSize: pageSize,
 					text: tet
 				},
@@ -86,7 +98,7 @@ require(["mui"], function(mui) {
 		}else{
 				mui.ajax('/api/findPart', {
 				data: {
-					page: pages,
+					page: page,
 					pageSize: pageSize,
 					text: tet
 				},
@@ -127,6 +139,16 @@ function ranlist(data){
 }
 
 
+var spa=document.querySelectorAll(".navtab span")
+mui(".navtab").on("tap","span",function(){
+	for(let i=0;i<spa.length;i++){
+		spa[i].classList.remove("act")
+	}
+	this.classList.add("act")
+	if(this.innerHTML==="书架"){
+		location.href="page/bookrack.html"
+	}
+})
 
 
 
@@ -143,19 +165,20 @@ function ranlist(data){
 		
 	function pullupRefresh() {
 		setTimeout(function() {
-			render(txt,pages++)
+			render(txt,page++)
 
 		});
 	}
 
 	function liclick(){
+		
 		mui(".nav").on("tap",".nav-img",function(){
 			localStorage.setItem("xid",this.getAttribute("data-id"));
 			location.href="./page/inside.html";
 		})
 	}
 
-
+	
 
 
 	init()

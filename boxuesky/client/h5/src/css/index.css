@@ -25,16 +25,12 @@
   .header .btn {
     margin: 5px 0; }
 
-.mui-slider-group {
+#swiper {
   width: 100%;
-  height: 100%; }
-  .mui-slider-group .mui-slider-item {
+  height: 190px; }
+  #swiper img {
     width: 100%;
     height: 100%; }
-    .mui-slider-group .mui-slider-item img {
-      width: 100%;
-      height: 210px;
-      margin-top: 44px; }
 
 .yw-data {
   text-align: center;
@@ -66,10 +62,20 @@
     font-weight: normal; }
 
 #pullrefresh {
-  margin-top: 300px;
+  margin-top: 275px;
   width: 100%;
   height: 368px; }
 
 .active {
   background: palevioletred;
   color: #fff; }
+
+.mui-bar-tab {
+  height: 36px; }
+  .mui-bar-tab .mui-tab-item {
+    height: 36px; }
+    .mui-bar-tab .mui-tab-item span {
+      padding: 10px 75px; }
+
+.act {
+  color: deepskyblue; }

@@ -26,7 +26,13 @@ html, body {
     width: 95px;
     height: 130px; }
   .header .right {
-    margin: 0 15px; }
+    width: 200px;
+    margin: 0 15px;
+    position: relative; }
+    .header .right .yd {
+      position: absolute;
+      right: 0;
+      top: 0; }
   .header h3 {
     font-size: 15px; }
 
@@ -38,7 +44,8 @@ html, body {
   padding: 0 15px;
   background: #fff; }
   .review .review-nav {
-    display: flex; }
+    display: flex;
+    justify-content: space-between; }
     .review .review-nav h3 {
       font-size: 15px; }
 

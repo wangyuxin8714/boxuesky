@@ -26,6 +26,7 @@ require(["mui"],function(mui){
 				if(res.code==1){
 					location.href="../index.html";
 					localStorage.setItem("id",res.uid)
+					localStorage.setItem("name",account.value)
 				}else{
 					mui.alert(res.msg)
 				}

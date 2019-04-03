@@ -32,7 +32,14 @@ html,body{
 		}
 	}
 	.right{
+		width: 200px;
 		margin: 0 15px;
+		position: relative;
+		.yd{
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
 	}
 	h3{
 		font-size: 15px;
@@ -47,9 +54,11 @@ html,body{
 	background: #fff;
 	.review-nav{
 		display: flex;
+		justify-content: space-between;
 		h3{
 			font-size: 15px;
 		}
+		
 	}
 }
 .rote{

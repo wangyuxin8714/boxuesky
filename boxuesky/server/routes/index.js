@@ -6,6 +6,7 @@ var book = "book";
 var userBase = "userBase";
 var fict = "fict";
 var bookrack = "bookrack";
+var comment = "comment";
 /* GET home page. */
 
 //用户登录
@@ -46,11 +47,17 @@ router.post('/api/finddetails', function(req, res, next) {
     })
 });
 
+//更新阅读量
+router.post('/api/updatefict', function(req, res, next) {
+	console.log(req.body)
+    mongo.update(book, fict,[{"_id":req.body.xid},{"sum":req.body.sum},{upsert:true}], function(result) {
+		res.send({ code: 1, msg:"修改成功" })
+    })
+});
+
 //分类查询  连载  完本
 router.post('/api/findPart', function(req, res, next) {
 	var  page = req.body.page;
-	console.log(page)
-
 	var  pageSize = req.body.pageSize;
     mongo.find(book, fict, { "updateType": req.body.text }, function(result) {
         if (result.length === 0) {
@@ -64,35 +71,72 @@ router.post('/api/findPart', function(req, res, next) {
     })
 });
 
-//添加书架
-router.post('/api/insertBookrack', function(req, res, next) {
-    console.log(req.body)
-    if (!req.body.uid || !req.body.bookName || !req.body.coverUrl || !req.body.authorName) {
+
+
+//添加坪论
+router.post('/api/insertcomment', function(req, res, next) {
+    if (!req.body.uid || !req.body.name || !req.body.val || !req.body.xid) {
         res.send({ code: 0, msg: "添加失败" })
     } else {
-        mongo.insert(book, bookrack, req.body, function(result) {
+        mongo.insert(book, comment, req.body, function(result) {
             res.send({ code: 1, msg: "添加成功" })
         })
+    }
+});
+
+//查询评论
+router.post('/api/findcomment', function(req, res, next) {
+    mongo.find(book, comment, {"xid":req.body.xid}, function(result) {
+        if (result.length === 0) {
+            res.send({ code: 0, msg: "查不到" })
+        } else {
+            res.send({ code: 1, data:result})
+        }
+    },{
+		sort:{
+			"_id":-1
+		}
+	})
+});
+
+
+//添加书架
+router.post('/api/insertBookrack', function(req, res, next) {
+    if (!req.body.uid || !req.body.bookName || !req.body.coverUrl || !req.body.authorName|| !req.body.bid|| !req.body.firstCid|| !req.body.xid) {
+        res.send({ code: 0, msg: "添加失败" })
+    } else {
+		mongo.find(book,bookrack,{"uid":req.body.uid,"bookName":req.body.bookName},function(result){
+			console.log(result)
+			if(result.length===0){
+				mongo.insert(book, bookrack, req.body, function(result) {
+					res.send({ code: 1})
+				})
+			}else{
+				res.send({code:2,msg:"已添加"})
+			}
+		})
     }
 
 });
 
 //个人书架查询
 router.post('/api/findBookrack', function(req, res, next) {
-    console.log(req.body)
     mongo.find(book, bookrack, { "uid": req.body.uid }, function(result) {
         if (result.length === 0) {
             res.send({ code: 0, msg: "找不到" })
         } else {
             res.send({ code: 1, data: result })
         }
-    })
+    },{
+		sort:{
+			"_id":-1
+		}
+	})
 });
 
 //删除个人书架里的书
 router.post('/api/deleteBookrack', function(req, res, next) {
-    console.log(req.body)
-    mongo.remove(book, bookrack, { "_id": req.body.id }, function(result) {
+    mongo.remove(book, bookrack, { "_id": req.body.id,}, function(result) {
         if (result.deletedCount === 0) {
             res.send({ code: 0, msg: "删除失败" })
         } else {

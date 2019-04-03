@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<title></title>
+		<title>博学网</title>
+		<link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Erynia/staticFile/dev/favicon.ico" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -20,35 +22,15 @@
 						</div>
 					</div>
 				</header>
-				
-				
-				
-				
-				
-				<div class="mui-slider-group mui-slider-loop">
-					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="images/2.png">
-						</a>
-					</div>
-					<!-- 第一张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/1.png">
-						</a>
-					</div>
-					<!-- 第二张 -->
-					<div class="mui-slider-item">
-						<a href="#">
-							<img src="images/2.png">
-						</a>
-					</div>
-					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
-					<div class="mui-slider-item mui-slider-item-duplicate">
-						<a href="#">
-							<img src="../images/1.png">
-						</a>
+				<div class="mui-content">
+					<div class="swiper-container" id="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="images/11.jpg" ></div>
+							<div class="swiper-slide"><img src="images/13.jpg" ></div>
+							<div class="swiper-slide"><img src="images/15.jpg" ></div>
+							<div class="swiper-slide"><img src="images/10.jpg" ></div>
+						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 				<div class="yw-data">
@@ -59,7 +41,7 @@
 
 
 			</div>
-		
+
 			<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
 				<div class="mui-scroll scro">
 					<!--数据列表-->
@@ -68,7 +50,15 @@
 					</ul>
 				</div>
 			</div>
+			<nav class="mui-bar mui-bar-tab navtab">
+				<a class="mui-tab-item">
+					<span class="mui-tab-label act">书库</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-tab-label">书架</span>
+				</a>
+			</nav>
 		</div>
-			<script src="js/libs/require.js" async defer data-main="js/index"></script>
+		<script src="js/libs/require.js" async defer data-main="js/index"></script>
 	</body>
 </html>
